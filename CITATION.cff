@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software in academic work, please cite the repository and associated research paper when available."
+title: "SonoLesion-AI: Breast Ultrasound Lesion Analysis Platform"
+type: software
+authors:
+  - family-names: "Altaf"
+    given-names: "Muhammad"
+version: 1.0.0
+date-released: 2026-09-28
+license: MIT

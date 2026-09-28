@@ -1,0 +1,26 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    environment:
+      SONOLESION_RESULTS_DIR: /app/results
+      SONOLESION_ALLOW_DEMO_MODE: "true"
+    volumes:
+      - sonolesion_results:/app/results
+    ports:
+      - "8000:8000"
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    environment:
+      SONOLESION_API_URL: http://api:8000
+    depends_on:
+      - api
+    ports:
+      - "8501:8501"
+
+volumes:
+  sonolesion_results:
